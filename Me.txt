@@ -1,0 +1,6 @@
+Nama : Elsa Elisa Yohana Sianturi
+NIM : 122140135
+
+Resolusi Saya di tahun ini : Saya bertekad untuk meraih resolusi menguasai bahasa pemrograman Python, 
+                            membuat sebuah website , dan juga mendalami  data science untuk membantu 
+                            pemahaman Saya lebih mendalam  dalam analisis data
