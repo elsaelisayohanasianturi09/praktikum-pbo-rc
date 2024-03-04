@@ -1,48 +1,61 @@
+#Nama : Elsa Elisa Yohana Sianturi
+#NIM : 122140135
 class Food :
-    def __init__(self, inputName : str,  inputHeal : int):
+    def __init__(self, inputName : str, inputHeal : int) :
         self.name = inputName
         self.heal = inputHeal
-        
-class Animal :
-    def __init__(self, inputName : str, inputColour : str , inputBlood : int):
+class Robot :
+    def __init__(self, inputName : str, inputLife : int) :
         self.name = inputName
-        self.colour = inputColour
-        self.blood = inputBlood
-    def showBlood(self):
-        print(f"{self.name} darahnya sekarang {self.blood}")
-    def hit(self, target):
-        print(f"{self.name}  memukul {target.name}! darah berkurang 10")
-        target.blood -= 10
-    def sleep(self):
-        print(f"{self.name} tidur") 
-    def eat(self, food : Food):
-        print(f"{self.name} makan {food.name}! darah bertambah {food.heal}")
-        self.blood += food.heal
+        self.life = inputLife
+    def showLife(self) :
+        print(f"{self.name} nyawanya sekarang {self.life}")
+        print(" ")
+    def hit(self, target1) :
+        print(f"{self.name} memukul {target1.name} ! Nyawa berkurang 20")
+        print(" ")
+        target1.life -= 20
+    def kick(self, target2) :
+        print(f"{self.name} menendang {target2.name} ! Nyawa berkurang 40")
+        print(" ")
+        target2.life -= 40
+    def eat(self, food : Food) :
+        print(f"{self.name} makan {food.name} ! Darah bertambah {food.heal}" )
+        self.life += food.heal
+        print(" ")
         
+        
+        
+food1 = Food("Carrot", 50)
+food2 = Food("Broccoli", 20)
+food3 = Food("Spinach", 10)
 
-food1 = Food("Bayam", 40)
-food2 = Food("Wortel", 60)
-food3 = Food("Cabai", 20)
+robot1 = Robot("Optimus", 120)
+robot2 = Robot("Bumblebee", 180)
+robot3 = Robot("Mirage", 120)
+robot4 = Robot("Arcee", 80)
 
-animal1 = Animal("Kucing", "White", 190)
-animal2 = Animal("Anjing", "Black", 180)
-animal3 = Animal("Kelinci", "Yellow", 170)
+robot1.showLife()
+robot2.showLife()
+robot3.showLife()
+robot4.showLife()
 
-animal1.showBlood()
-animal2.showBlood()
-animal3.showBlood()
+robot1.kick(robot4)
+robot4.showLife()
 
-animal1.hit(animal2)
-animal2.showBlood()
+robot3.hit(robot4)
+robot4.showLife()
 
-animal2.hit(animal3)
-animal3.showBlood()
+robot2.hit(robot4)
+robot4.showLife()
 
-animal1.hit(animal3)
-animal3.showBlood()
+robot4.eat(food1)
+robot4.showLife()
 
-animal2.eat(food1)
-animal2.showBlood() 
+robot4.eat(food2)
+robot4.showLife()
 
-animal3.eat(food2)
-animal3.showBlood()
+robot4.kick(robot2)
+robot2.showLife()
+
+
