@@ -1,5 +1,6 @@
 #Nama : Elsa Elisa Yohana Sianturi
 #NIM : 122140135
+
 class Food :
     def __init__(self, inputName : str, inputHeal : int) :
         self.name = inputName
