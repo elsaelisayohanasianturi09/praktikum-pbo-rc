@@ -1,0 +1,118 @@
+import random
+
+def choiceWord():
+    word = ['python', 'c++', 'java', 'html', 'kotlin', 'website', 'apps', 'CPU', 'RAM', 'github', 'OOP', 'SQL', 'databases', 'bit']
+    return random.choice(word)
+
+def showHanger(testing):
+    hanger = [  
+                '''
+                   --------
+                   |      |
+                   |      O
+                   |     \|/
+                   |      |
+                   |     / \\
+                   -
+                ''',
+                '''
+                   --------
+                   |      |
+                   |      O
+                   |     \|/
+                   |      |
+                   |     / 
+                   -
+                ''',
+                '''
+                   --------
+                   |      |
+                   |      O
+                   |     \|/
+                   |      |
+                   |     
+                   -
+                ''',
+                '''
+                   --------
+                   |      |
+                   |      O
+                   |     \|
+                   |      |
+                   |     
+                   -
+                ''',
+                '''
+                   --------
+                   |      |
+                   |      O
+                   |      |
+                   |      |
+                   |     
+                   -
+                ''',
+                '''
+                   --------
+                   |      |
+                   |      O
+                   |    
+                   |      
+                   |     
+                   -
+                ''',
+                '''
+                   --------
+                   |      |
+                   |      
+                   |    
+                   |      
+                   |     
+                   -
+                '''
+    ]
+    return hanger[testing]
+
+def hangman():
+    words = choiceWord()
+    lettersGuess = []
+    testing = 6
+    skor = 0
+
+    print("Selamat datang di Hangman!")
+    print(showHanger(testing))
+
+    while True:
+        hiddenLetters = ""
+        for letters in words:
+            if letters in lettersGuess:
+                hiddenLetters += letters
+            else:
+                hiddenLetters += "_"
+        
+        print("Kata yang akan ditebak:", hiddenLetters)
+        
+        if hiddenLetters == words:
+            print("Selamat! Anda berhasil menebak kata:", words)
+            skor += 1
+            break
+        
+        gueess = input("Tebak satu huruf saja : ").lower()
+        
+        if gueess in lettersGuess:
+            print("Anda sudah menebak huruf tersebut sebelumnya!")
+        elif gueess in words:
+            print("Tebakan benar!")
+            lettersGuess.append(gueess)
+        else:
+            print("Tebakan salah!")
+            testing -= 1
+            print(showHanger(testing))
+        
+        if testing == 0:
+            print("Anda kehabisan testing! Kata yang benar adalah:", words)
+            break
+
+    print("Skor Anda:", skor)
+
+
+hangman()
