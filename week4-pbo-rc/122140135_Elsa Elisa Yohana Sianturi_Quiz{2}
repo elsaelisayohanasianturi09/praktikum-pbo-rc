@@ -1,3 +1,7 @@
+#Name : Elsa Elisa Yohana Sianturi
+#NIM : 122140135
+#Class : RC
+
 import random
 
 def choiceWord():
